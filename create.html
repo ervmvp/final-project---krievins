@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Character Maker</title>
+  <link rel="stylesheet" href="design.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="website elements/identit-fy.png" alt="not found" class="logo-img" />
+    </div>
+  </header>
+
+  <!-- Main Application -->
+  <div class="app">
+    <!-- Left Panel -->
+    <div class="panel" id="leftPanel">
+      <!-- Categories -->
+      <div class="categories">
+        <button class="category-btn active" data-category="all">All</button>
+        <button class="category-btn" data-category="hair">Hair</button>
+        <button class="category-btn" data-category="eyes">Eyes</button>
+        <button class="category-btn" data-category="Jaw">Jaw</button>
+        <button class="category-btn" data-category="lips">Lips</button>
+        <button class="category-btn" data-category="ears">Ears</button>
+        <button class="category-btn" data-category="eyebrows">Eyebrows</button>
+        <button class="category-btn" data-category="nose">Nose</button>
+        <button class="category-btn" data-category="facial_hair">Facial hair</button>
+      </div>
+
+      <!-- Thumbnail Grid -->
+      <div class="thumb-grid" id="thumbGrid" title="Click a thumbnail to add it to the canvas">
+        <!-- thumbnails injected by JS -->
+      </div>
+
+      <!-- Controls -->
+      <div class="controls">
+        <!-- Scale Control -->
+        <div class="control-row">
+          <label>Scale</label>
+          <input id="scaleRange" type="range" min="20" max="300" value="100">
+        </div>
+
+        <!-- Rotate Control -->
+        <div class="control-row">
+          <label>Rotate</label>
+          <input id="rotateRange" type="range" min="-180" max="180" value="0">
+        </div>
+
+        <!-- Opacity Control -->
+        <div class="control-row">
+          <label>Opacity</label>
+          <input id="opacityRange" type="range" min="0" max="100" value="100">
+        </div>
+
+        <!-- Flip and Delete Buttons -->
+        <div class="control-row">
+          <label>Flip</label>
+          <button id="flipBtn" class="btn secondary small">Flip X</button>
+          <button id="delBtn" class="btn secondary small">Delete</button>
+        </div>
+
+        <!-- Layer Controls -->
+        <div class="layer-controls" style="display:flex;gap:8px;align-items:center;">
+          <button id="bringForward" class="btn small">Bring ⤴</button>
+          <button id="sendBack" class="btn small">Send ⤵</button>
+          <button id="saveBtn" class="btn small">Export</button>
+        </div>
+
+        <!-- Layers Panel -->
+        <div class="layers" style="margin-top:8px">
+          <h3>Layers</h3>
+          <div class="layer-list" id="layerList"></div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer>Drag items to position - Click a thumbnail to add</footer>
+    </div>
+
+    <!-- Canvas Area -->
+    <div class="canvas-wrap">
+      <div class="stage" id="stage">
+        <!-- active items will be inserted here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="create.js"></script>
+</body>
+</html>
