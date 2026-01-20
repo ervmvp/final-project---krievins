@@ -1,5 +1,5 @@
 
-// ========== FEATURE TEMPLATES ==========
+// FEATURE TEMPLATES 
 const FEATURES = [
   // Hair
   { id: 'hair1', name: 'Hair 1', category: 'hair', img: '<img src="face elements/hair/hair 1.png">' },
@@ -108,16 +108,16 @@ const FEATURES = [
   { id: 'jaw11', name: 'Jaw 11', category: 'Jaw', img: '<img src="face elements/jaw/jaw 11.png">' },
 ];
 
-// ========== DOM ELEMENTS & STATE ==========
+// ELEMENTS & STATE 
 const thumbGrid = document.getElementById('thumbGrid');
 const stage = document.getElementById('stage');
 const layerList = document.getElementById('layerList');
 
-let selected = null; // Currently selected DOM element
+let selected = null; // Currently selected  element
 let zIndexCounter = 1;
 const items = []; // Track items in order
 
-// ========== INITIALIZATION ==========
+// INITIALIZATION 
 
 // Create thumbnails
 FEATURES.forEach(feature => {
@@ -153,7 +153,7 @@ categoryBtns.forEach(btn => {
   });
 });
 
-// ========== FEATURE MANAGEMENT ==========
+// FEATURE MANAGEMENT 
 
 // Create new feature on stage
 function addFeatureToStage(feature) {
@@ -228,7 +228,7 @@ function parseTransform(t) {
   return out;
 }
 
-// ========== DRAGGING FUNCTIONALITY ==========
+// DRAGGING FUNCTIONALITY
 
 // Make an element draggable (pointer events)
 function makeDraggable(el) {
@@ -285,7 +285,7 @@ function makeDraggable(el) {
   });
 }
 
-// ========== CONTROL HANDLERS ==========
+// CONTROL HANDLERS 
 
 // Scale control
 document.getElementById('scaleRange').addEventListener('input', (e) => {
@@ -337,7 +337,7 @@ document.getElementById('delBtn').addEventListener('click', () => {
   updateLayerList();
 });
 
-// ========== LAYER MANAGEMENT ==========
+// LAYER MANAGEMENT 
 
 // Layer order controls
 document.getElementById('bringForward').addEventListener('click', () => {
@@ -371,14 +371,14 @@ function updateLayerList() {
   });
 }
 
-// ========== EXPORT FUNCTIONALITY ==========
+// EXPORT FUNCTIONALITY
 
 // Export: rasterize the canvas and trigger download
 document.getElementById('saveBtn').addEventListener('click', async () => {
   await exportCanvas('character.png');
 });
 
-// ========== EVENT LISTENERS ==========
+// EVENT LISTENERS
 
 // Stage click to deselect
 stage.addEventListener('click', () => {
@@ -409,7 +409,7 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
-// ========== MODAL HANDLERS ==========
+// MODAL HANDLERS
 
 // Export button in modal
 exportBtnModal.addEventListener('click', async () => {
@@ -451,7 +451,7 @@ warningModal.addEventListener('click', (e) => {
   }
 });
 
-// ========== UTILITY FUNCTIONS ==========
+// UTILITY FUNCTIONS
 
 // Shared export function
 async function exportCanvas(filename) {
